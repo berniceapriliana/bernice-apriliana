@@ -1,0 +1,168 @@
+/* reset sederhana */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #f4efe6;
+  color: #2b2b2b;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* header */
+header {
+  background-color: #2f5d62;
+  color: white;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+header p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* lebar container pakai persen */
+main {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+/* profil */
+.profil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #ddd3c1;
+  text-align: center;
+}
+
+/* gambar tidak boleh lebih lebar dari container */
+.profil img {
+  max-width: 100%;
+  width: 180px;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid #2f5d62;
+}
+
+.profil-teks h2 {
+  font-size: 1.5rem;
+}
+
+.jurusan {
+  color: #6b6b6b;
+  margin-bottom: 12px;
+}
+
+#deskripsi {
+  margin-bottom: 18px;
+}
+
+button {
+  font-size: 0.95rem;
+  padding: 10px 18px;
+  margin: 4px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2f5d62;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #244a4e;
+}
+
+/* hobi */
+.hobi {
+  margin-top: 36px;
+}
+
+.hobi h2 {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* default (HP): 1 kolom */
+.kartu-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.kartu {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd3c1;
+}
+
+.kartu h3 {
+  margin-bottom: 8px;
+  color: #2f5d62;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+  color: #6b6b6b;
+}
+
+/* media query: layar >= 768px */
+@media (min-width: 768px) {
+  .profil {
+    flex-direction: row;
+    text-align: left;
+    padding: 32px;
+    gap: 32px;
+  }
+
+  .kartu-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* tema gelap (class ini di-toggle lewat JavaScript) */
+body.gelap {
+  background-color: #1c1f23;
+  color: #e8e8e8;
+}
+
+body.gelap .profil,
+body.gelap .kartu {
+  background-color: #2a2e33;
+  border-color: #3d434a;
+}
+
+body.gelap .jurusan,
+body.gelap footer {
+  color: #aaaaaa;
+}
+
+body.gelap .kartu h3 {
+  color: #7fc4c9;
+}
+
+body.gelap header {
+  background-color: #17393c;
+}
+
+body.gelap button {
+  background-color: #7fc4c9;
+  color: #1c1f23;
+}
